@@ -1,120 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>My Portofolio</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-    
-  </style>
+    <title>My Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .jumbotron {
+            background-color: #f5f5f5;
+            padding: 80px 0;
+        }
+
+        .jumbotron h1, .jumbotron h2 {
+            color: #333;
+        }
+
+        .jumbotron p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .navbar-inverse {
+            background-color: #333;
+            border-color: #333;
+        }
+
+        .navbar-inverse .navbar-brand,
+        .navbar-inverse .navbar-nav>li>a {
+            color: #fff;
+        }
+
+        .navbar-inverse .navbar-toggle {
+            border-color: #fff;
+        }
+
+        .navbar-inverse .navbar-toggle:hover,
+        .navbar-inverse .navbar-toggle:focus {
+            background-color: #fff;
+        }
+
+        .bg-3 {
+            background-color: #f2f2f2;
+            padding: 30px 0;
+        }
+
+        .bg-3 h3 {
+            margin: 20px 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .bg-3 p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .container-fluid.bg-3 img {
+            border-radius: 6px;
+        }
+        a:hover {
+            border-bottom: 2px solid #007BFF;
+        }
+    </style>
 </head>
+
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Portofolio</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="navigatorBar/aboutme/aboutMe.html">About</a></li>
-        <li><a href="navigatorBar/Gallery/Gallery.html">Gallery</a></li>
-        <li><a href="navigatorBar/ContactInfo/contactInfo.html">Contact</a></li>
-        <li><a href="navigatorBar/experiances/experiances.html">Experiances</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Portfolio</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="navigatorBar/aboutme/aboutMe.html">About</a></li>
+                    <li><a href="navigatorBar/Gallery/Gallery.html">Gallery</a></li>
+                    <li><a href="navigatorBar/ContactInfo/contactInfo.html">Contact</a></li>
+                    <li><a href="navigatorBar/Experiances/Experiances.html">Experiences</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>My Portfolio</h1>      
-    <h2>Some things about me.</h2>
-    <u>
-    <p>I love learning new things</p>
-    <p>I help others where I can</p>
-    <p>Motorcycle and Car inthusiast</p>
-    <p>Do sport shooting as a hobby</p>
-    </u>
-  </div>
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <h2>Some things about me.</h2>
+            <p>I love learning new things</p>
+            <p>I help others where I can</p>
+            <p>Motorcycle and Car enthusiast</p>
+            <p>Do sport shooting as a hobby</p>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-3 text-center">
+        <h3>Some work I did while studying at Code College</h3>
+        <div class="row">
+          <center>
+            <div class="col-sm-3">
+                <p>Robo Dance</p>
+                <a href="Dummies_Book/Chapter7/chapter7.html"><img src="Dummies_Book/Chapter7/robo.jpg"
+                        class="img-responsive" style="width:100%" alt="Image"></a>
+            </div>
+            <div class="col-sm-3">
+                <p>Hang Man</p>
+                <a href="Kids_Book/Chapter8/challange3.html"><img src="Kids_Book/Chapter8/hangman.jpg"
+                        class="img-responsive" style="width:60%" alt="Image"></a>
+            </div>
+            <div class="col-sm-3">
+                <p>Train Smash</p>
+                <a href="Dummies_Book/Chapter12/chapter12.html"><img src="Dummies_Book/Chapter12/Train.jpg"
+                        class="img-responsive" style="width:70%" alt="Image"></a>
+            </div>
+            <div class="col-sm-3">
+                <p>Wishing List</p>
+                <a href="Dummies_Book/Chapter13/chapter13.html"><img src="Dummies_Book/Chapter13/Wishlist.png"
+                        class="img-responsive" style="width:100%" alt="Image"></a>
+            </div>
+          </center>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-3 text-center">
+        <div class="row">
+          <center>
+            <div class="col-sm-3">
+                <p>Number Guess</p>
+                <a href="Assignments/Geuss_Game_Marcus_Gouws/geussgame_marcus_gouws.html"><img
+                        src="Assignments/Geuss_Game_Marcus_Gouws/Geuss.png" class="img-responsive" style="width:100%"
+                        alt="Image"></a>
+            </div>
+            <div class="col-sm-3">
+                <p>Let's do Shopping!</p>
+                <a href="Assignments/Sopping_Cart_Marcus_Gouws/Sopping_Cart_Marcus_Gouws.html"><img
+                        src="Assignments/Sopping_Cart_Marcus_Gouws/Cart.png" class="img-responsive" style="width:90%"
+                        alt="Image"></a>
+            </div>
+            <div class="col-sm-3">
+                <p>Weather Forecast</p>
+                <a href="Dummies_Book/Chapter17/chapter17.html"><img src="Dummies_Book/Chapter17/weather.png"
+                        class="img-responsive" style="width:90%" alt="Image"></a>
+            </div>
+          
+          <div class="col-sm-3">
+            <p>What to do?</p>
+            <a href="Dummies_Book/Chapter15/chapter15.html"><img src="Dummies_Book/Chapter15/Thinking.png"
+                    class="img-responsive" style="width:90%" alt="Image"></a>        
+        </div>
+      </center>  
+    </div>
 </div>
-  
-<div class="container-fluid bg-3 text-center">    
-  <h3>Some work I did while studying at Code Colllege</h3><br>
-  <div class="row">
-    <center>
-    <div class="col-sm-3">
-      <p>Robo Dance</p>
-     <a href="Dummies_Book/Chapter7/chapter7.html"> <img src="Dummies_Book/Chapter7/robo.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
-    </div>
-    <div class="col-sm-3"> 
-      <p>Hang Man</p>
-      <a href="Kids_Book/Chapter8/challange3.html"> <img src="Kids_Book/Chapter8/hangman.jpg" class="img-responsive" style="width:60%" alt="Image"></a>
-    </div>
-    <div class="col-sm-3"> 
-      <p>Train Smash</p>
-     <a href="Dummies_Book/Chapter12/chapter12.html"><img src="Dummies_Book/Chapter12/Train.jpg" class="img-responsive" style="width:70%" alt="Image"></a>
-    </div>
-    <div class="col-sm-3">
-      <p>Wishing List</p>
-      <a href="Dummies_Book/Chapter13/chapter13.html"><img src="Dummies_Book/Chapter13/Wishlist.png" class="img-responsive" style="width:100%" alt="Image"></a>
-    </div>
-  </div>
-</div><br>
-</center>
-<center>
-<div class="container-fluid bg-3 text-center">    
-  <div class="row">
-    <div class="col-sm-3">
-      <p>Number Geuss</p>
-      <a href="Assignments/Geuss_Game_Marcus_Gouws/geussgame_marcus_gouws.html"><img src="Assignments/Geuss_Game_Marcus_Gouws/Geuss.png" class="img-responsive" style="width:100%" alt="Image"></a>
-    </div>
-    <div class="col-sm-3"> 
-      <p>Let's do Shopping!</p>
-      <a href="Assignments/Sopping_Cart_Marcus_Gouws/Sopping_Cart_Marcus_Gouws.html"><img src="Assignments/Sopping_Cart_Marcus_Gouws/Cart.png" class="img-responsive" style="width:90%" alt="Image"></a>
-    </div>
-    <div class="col-sm-3"> 
-      <p>Weather Forecast</p>
-     <a href="Dummies_Book/Chapter17/chapter17.html"> <img src="Dummies_Book/Chapter17/weather.png" class="img-responsive" style="width:90%" alt="Image"></a>
-    </div>
-    <div class="col-sm-3">
-      <p>What to do?</p>
-     <a href="Dummies_Book/Chapter15/chapter15.html"> <img src="Dummies_Book/Chapter15/Thinking.png" class="img-responsive" style="width:90%" alt="Image"></a>
-    </div>
-  </div>
-</div><br><br>
-</center>
 
 <footer class="container-fluid text-center">
-  <p>Feel free to reach out to me on Email or Watsapp on:</p>
-  <p><a href="mailto:Marcusgouws93@gmail.com">Marcusgouws93@gamil.com</a></p>
-  <p>or</p>
-  <p><a href="tel: +27826104322">0826104322</a></p>
-  <p>Should you have any futher inquiries or questions</p>
+    Contact me by clicking <a href="navigatorBar/ContactInfo/contactInfo.html">Here</a>.
+    <p>Should you have any further inquiries or questions</p>
 </footer>
 
 </body>
+
 </html>
