@@ -7,8 +7,10 @@
     <title>Contact Information</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 20px;
+            background-color: #f5f5f5;
+            color: #333;
         }
 
         header {
@@ -19,14 +21,30 @@
         section {
             max-width: 600px;
             margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: #333;
+            color: #708090;
+            margin-bottom: 20px;
         }
 
         address {
             font-style: normal;
+            color: #555;
+        }
+
+        address a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        address a:hover {
+            color: #0011fc;
         }
 
         form {
@@ -36,6 +54,7 @@
         label {
             display: block;
             margin-bottom: 8px;
+            color: #555;
         }
 
         input,
@@ -44,19 +63,31 @@
             padding: 10px;
             margin-bottom: 15px;
             box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #708090;
             color: white;
             padding: 12px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.sent {
+            background-color: #0000fc;
+        }
+
+        button.sent:after {
+            content: 'ed ✓';
+            margin-right: 2px;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #0080ff;
         }
     </style>
 </head>
@@ -71,10 +102,10 @@
         <h2>Marcus Gouws</h2>
         <address>
             Kempton park, Gauteng<br>
-            South Africa , 1619<br>
+            South Africa, 1619<br>
             Feel free to phone me or complete the form below<br>
-            Phone: <a href="tel:+276104322">+27 826104322</a><br>
-            Email: <a>Marcugouws93@gmail.com</a>
+            Phone: <a href="tel:+27826104322">+27 826104322</a><br>
+            Email: marcusgouws93@gmail.com
         </address>
 
         <h2>Contact Form</h2>
@@ -96,6 +127,7 @@
         
         function submitForm() {
             var form = document.getElementById("myForm");
+            var button = document.getElementById("Submit");
         
             // Create FormData object to collect form data
             var formData = new FormData(form);
@@ -109,6 +141,7 @@
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         // Form submission successful
+                        animateButton(button);
                         clearForm();  // Clear the fields after successful submission
                     } else {
                         // Form submission failed
@@ -121,14 +154,18 @@
             xhr.send(formData);
         }
         
+        function animateButton(button) {
+            button.classList.add("sent");
+            setTimeout(function() {
+                button.classList.remove("sent");
+            }, 3000); // Show "Sent" for 3000 milliseconds
+        }
+        
         function clearForm() {
             // Clear the form fields
             document.getElementById("name").value = "";
             document.getElementById("email").value = "";
             document.getElementById("message").value = "";
-        
-            // Optionally, display a success message or perform additional actions
-            alert("Form submitted successfully!");
         }
         </script>
         
