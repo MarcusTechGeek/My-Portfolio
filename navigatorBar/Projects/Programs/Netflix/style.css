@@ -44,7 +44,6 @@ nav button {
     border-radius: 4px;
     margin-left: 10px;
     cursor: pointer;
-    
 }
 
 .lang-btn {
@@ -76,7 +75,7 @@ nav button {
 }
 
 .header-content h1 {
-    font-size: 18px;
+    font-size: 60px;
     line-height: 70px;
     font-weight: 600;
     max-width: 650px;
@@ -87,16 +86,12 @@ nav button {
     margin-bottom: 20px;
 }
 
-.email-signup-container {
-    margin-top: 30px;
-}
-
 .email-signup {
     background: #fff;
     border-radius: 4px;
-    height: 50px;
     display: flex;
     align-items: center;
+    margin-top: 30px;
     overflow: hidden;
 }
 
@@ -107,11 +102,7 @@ nav button {
     margin-left: 20px;
 }
 
-.signup-button-container {
-    margin-top: 10px;
-}
-
-.signup-button {
+.email-signup button {
     background-color: #db0001;
     border: none;
     outline: none;
@@ -121,25 +112,10 @@ nav button {
     padding: 15px 30px;
 }
 
-.feature-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-.feature {
+.features {
     padding: 50px 12%;
     font-size: 22px;
-    display: flex;
-    flex-basis: 50%; /* Adjust as needed */
-    margin-bottom: 20px;
-    align-items: center;
-    
-}
-
-.text-col {
-    flex-basis: 50%;
-    padding: 0 20px; /* Adjust as needed */
 }
 
 .row {
@@ -150,10 +126,19 @@ nav button {
     padding: 50px 0;
 }
 
+.text-col, .img-col {
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
 
+.img-col img {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
 
 .features h2 {
-    font-size: 18px;
+    font-size: 50px;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -165,7 +150,7 @@ nav button {
 }
 
 .faq h2 {
-    font-size: 18px;
+    font-size: 40px;
     font-weight: 500;
 }
 
@@ -195,7 +180,7 @@ nav button {
 
 label::after {
     content: '+';
-    font-size: 18px;
+    font-size: 34px;
     position: absolute;
     right: 20px;
     transition: transform 0.5s;
@@ -219,54 +204,127 @@ input[type="radio"] {
     padding: 30px 20px;
 }
 
+.accordion input[type="radio"]:checked + label::after {
+    transform: rotate(135deg);
+}
+
+.faq small {
+    font-size: 13px;
+}
+
+.faq .email-signup {
+    max-width: 600px;
+    margin: 20px auto 60px;
+}
+
+
 .footer {
-    padding: 50px 12%;
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #777;
 }
 
 .footer h2 {
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.footer .col {
+    flex-basis: 25%;
+    flex-grow: 1;
     margin-bottom: 20px;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.col a {
+.footer .col a {
     display: block;
-    color: #757575;
-    text-decoration: none;
+    color: #777;
+    font-size: 14px;
     margin-bottom: 10px;
-    font-size: 16px;
+    text-decoration: none;
 }
 
-.lang-btn {
-    margin-top: 20px;
-    display: inline-flex;
-    align-items: center;
-    background: transparent;
-    border: 1px solid #fff;
-    padding: 7px 10px;
+.footer .row {
+    align-items: flex-start;
+    padding: 10px 0px;
 }
 
-.lang-btn img {
-    width: 10px;
-    margin-left: 10px;
-}
-
-.lang-btn i {
+.footer .lang-btn {
     color: #fff;
-    width: 10px;
-    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 3px;
 }
 
 .copyright-text {
-    margin-top: 20px;
-    color: #757575;
     font-size: 14px;
-    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
+
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 100px;
+    }
+
+    nav button {
+        padding: 5px 10px;
+    }
+
+    nav .lang-btn {
+        padding: 4px 8px;
+    }
+
+    .header-content {
+        position: unset;
+        transform: none;
+        padding-top: 150px;
+    }
+
+    .header-content h1 {
+        font-size: 30px;
+    }
+
+    .email-signup button {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .text-col, .img-col {
+        flex-basis: 100%;
+    }
+
+    .features h2 {
+        font-size: 30px;
+    }
+
+    .features p {
+        font-size: 15px;
+    }
+
+    .row:nth-child(2), .row:nth-child(4) {
+        flex-direction: column-reverse;
+    }
+
+    .features .row {
+        padding: 10px 0;
+    }
+
+    .faq h2 {
+        font-size: 20px;
+    }
+
+    .accordion .content {
+        font-size: 14px;
+    }
+
+    .accordion li label {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    label::after {
+        font-size: 22px;
+    }
+}
