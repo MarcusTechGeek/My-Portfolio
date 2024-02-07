@@ -44,6 +44,7 @@ nav button {
     border-radius: 4px;
     margin-left: 10px;
     cursor: pointer;
+    
 }
 
 .lang-btn {
@@ -263,7 +264,7 @@ input[type="radio"] {
 }
 
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 600px) {
     .logo {
         width: 80px;
     }
@@ -312,6 +313,10 @@ input[type="radio"] {
 
     .features p {
         font-size: 12px;
+    }
+
+    .row .img-col img {
+        width: 100%; /* Adjusted image size for mobile */
     }
 
     .row:nth-child(2),
