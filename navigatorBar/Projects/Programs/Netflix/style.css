@@ -313,12 +313,14 @@ input[type="radio"] {
     width: 100%; /* Make the input take up the full width of the container */
     box-sizing: border-box; /* Ensure padding and border are included in the width */
     max-width: 100%; /* Ensure the input doesn't exceed the container width */
+    padding: 10px;
 }
 
 .email-signup button {
     width: 100%; /* Make the button take up the full width of the container */
     box-sizing: border-box; /* Ensure padding and border are included in the width */
     max-width: 100%; /* Ensure the button doesn't exceed the container width */
+    padding: 10px;
 }
 
 
