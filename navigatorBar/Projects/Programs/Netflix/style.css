@@ -273,7 +273,7 @@ input[type="radio"] {
     }
 
     .header {
-        
+        height: auto;
         padding: 50px 8%; /* Increase padding for better spacing on smaller screens */
     }
 
@@ -300,6 +300,7 @@ input[type="radio"] {
         max-width: 100%; /* Ensure text doesn't overflow on small screens */
     }
 
+   /* Update the CSS for email signup */
 .email-signup {
     display: flex;
     flex-direction: column; /* Stack input and button vertically on small screens */
@@ -313,20 +314,19 @@ input[type="radio"] {
     width: 100%; /* Make the input take up the full width of the container */
     box-sizing: border-box; /* Ensure padding and border are included in the width */
     max-width: 100%; /* Ensure the input doesn't exceed the container width */
-    padding: 10px;
+    padding: 10px; /* Add padding to create space around the input */
+    flex-shrink: 0; /* Prevent the input from shrinking beyond its specified width */
 }
 
 .email-signup button {
     width: 100%; /* Make the button take up the full width of the container */
     box-sizing: border-box; /* Ensure padding and border are included in the width */
     max-width: 100%; /* Ensure the button doesn't exceed the container width */
-    padding: 10px;
+    margin-top: 10px; /* Add margin to create space between the input and button */
+    flex-shrink: 0; /* Prevent the button from shrinking beyond its specified width */
 }
 
 
-    .features{
-        margin-top: 20px;
-    }
     .features, .faq {
         padding: 30px 8%; /* Adjust padding for better spacing on smaller screens */
     }
