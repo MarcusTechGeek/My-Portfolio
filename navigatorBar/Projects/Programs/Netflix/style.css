@@ -263,19 +263,18 @@ input[type="radio"] {
     text-align: center;
 }
 
-
 @media only screen and (max-width: 600px) {
     .logo {
-        width: 80px;
+        width: 120px;
     }
 
     nav button {
-        padding: 5px 8px;
-        font-size: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
     }
 
     nav .lang-btn {
-        padding: 4px 6px;
+        padding: 7px 14px;
     }
 
     .header-content {
@@ -283,67 +282,65 @@ input[type="radio"] {
     }
 
     .header-content h1 {
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 36px;
+        line-height: 40px;
     }
 
     .header-content h3 {
-        font-size: 14px;
-        margin-bottom: 10px;
+        font-size: 16px;
+        margin-bottom: 15px;
     }
 
     .email-signup {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .email-signup input {
-        margin-left: 0;
-        margin-top: 10px;
-        font-size: 14px;
+        margin-left: 20px;
+        margin-top: 0;
+        font-size: 16px;
     }
 
     .signup-button {
-        font-size: 14px;
-        padding: 10px 15px;
+        font-size: 16px;
+        padding: 15px 30px;
     }
 
     .features h2 {
-        font-size: 30px;
+        font-size: 50px;
     }
 
     .features p {
-        font-size: 12px;
+        font-size: 22px;
     }
 
     .row .img-col img {
-        width: 100%; /* Adjusted image size for mobile */
+        width: 90%; /* Adjusted image size for mobile */
     }
 
     .row:nth-child(2),
     .row:nth-child(4) {
-        flex-direction: column-reverse;
+        flex-direction: row; /* Adjusted layout for mobile */
     }
 
     .features .row {
-        padding: 10px 0;
+        padding: 50px 0; /* Adjusted padding for mobile */
     }
 
     .faq h2 {
-        font-size: 18px;
+        font-size: 40px;
     }
 
     .accordion .content {
-        font-size: 12px;
+        font-size: 18px;
     }
 
     .accordion li label {
-        padding: 10px;
-        font-size: 12px;
+        padding: 20px;
+        font-size: 18px;
     }
 
     label::after {
-        font-size: 18px;
+        font-size: 34px;
     }
 }
-
-
