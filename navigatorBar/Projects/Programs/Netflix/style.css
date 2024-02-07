@@ -76,7 +76,7 @@ nav button {
 }
 
 .header-content h1 {
-    font-size: 60px;
+    font-size: 18px;
     line-height: 70px;
     font-weight: 600;
     max-width: 650px;
@@ -146,7 +146,7 @@ nav button {
 }
 
 .features h2 {
-    font-size: 50px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -158,7 +158,7 @@ nav button {
 }
 
 .faq h2 {
-    font-size: 40px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -188,7 +188,7 @@ nav button {
 
 label::after {
     content: '+';
-    font-size: 34px;
+    font-size: 18px;
     position: absolute;
     right: 20px;
     transition: transform 0.5s;
@@ -261,89 +261,5 @@ input[type="radio"] {
     color: #757575;
     font-size: 14px;
     text-align: center;
-}
-
-/* Existing CSS code */
-
-@media only screen and (max-width: 600px) {
-    .logo {
-        width: 120px;
-    }
-
-    nav button {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    nav .lang-btn {
-        padding: 7px 14px;
-    }
-
-    .header-content {
-        padding-top: 120px;
-    }
-
-    .header-content h1 {
-        font-size: 24px;
-        line-height: 30px;
-    }
-
-    .header-content h3 {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    .email-signup {
-        flex-direction: column;
-    }
-
-    .email-signup input {
-        margin-left: 0;
-        margin-top: 10px;
-        font-size: 14px;
-    }
-
-    .signup-button {
-        font-size: 14px;
-        padding: 10px 15px;
-    }
-
-    .features h2 {
-        font-size: 30px;
-    }
-
-    .features p {
-        font-size: 12px;
-    }
-
-    .row .img-col img {
-        width: 90%; /* Adjusted image size for mobile */
-    }
-
-    .row:nth-child(2),
-    .row:nth-child(4) {
-        flex-direction: row; /* Adjusted layout for mobile */
-    }
-
-    .features .row {
-        padding: 50px 0; /* Adjusted padding for mobile */
-    }
-
-    .faq h2 {
-        font-size: 18px;
-    }
-
-    .accordion .content {
-        font-size: 12px;
-    }
-
-    .accordion li label {
-        padding: 10px;
-        font-size: 12px;
-    }
-
-    label::after {
-        font-size: 18px;
-    }
 }
 
