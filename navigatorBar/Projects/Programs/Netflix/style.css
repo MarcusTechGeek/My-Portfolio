@@ -121,9 +121,23 @@ nav button {
     padding: 15px 30px;
 }
 
-.features {
+.feature-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.feature {
     padding: 50px 12%;
     font-size: 22px;
+    display: flex;
+    flex-basis: 50%; /* Adjust as needed */
+    margin-bottom: 20px;
+}
+
+.text-col {
+    flex-basis: 50%;
+    padding: 0 20px; /* Adjust as needed */
 }
 
 .row {
@@ -134,16 +148,7 @@ nav button {
     padding: 50px 0;
 }
 
-.text-col, .img-col {
-    flex-basis: 50%;
-    margin-bottom: 20px;
-}
 
-.img-col img {
-    display: block;
-    width: 90%;
-    margin: auto;
-}
 
 .features h2 {
     font-size: 18px;
