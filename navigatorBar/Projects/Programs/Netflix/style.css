@@ -302,7 +302,7 @@ input[type="radio"] {
 
     .email-signup {
         flex-direction: column; /* Stack input and button vertically on small screens */
-        max-width: 300px; /* Set a maximum width to prevent stretching */
+        max-width: 100%; /* Set a maximum width to prevent stretching */
         margin: 0 auto; /* Center the signup form on the screen */
     }
     
@@ -315,7 +315,7 @@ input[type="radio"] {
     .email-signup button {
         width: 100%; /* Make the button take up the full width of the container */
     }
-    
+
     .features, .faq {
         padding: 30px 8%; /* Adjust padding for better spacing on smaller screens */
     }
