@@ -264,68 +264,96 @@ input[type="radio"] {
 
 
 
+/* Add this section at the end of your CSS file */
+
+/* Improved responsiveness for smaller screens */
 @media only screen and (max-width: 600px) {
-    .logo {
-        width: 100px;
+    body {
+        font-size: 14px; /* Adjust the default font size for better readability on small screens */
+    }
+
+    .header {
+        height: auto;
+        padding: 50px 8%; /* Increase padding for better spacing on smaller screens */
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     nav button {
-        padding: 5px 10px;
+        margin: 10px 0; /* Add margin for better spacing between buttons */
     }
 
-    nav .lang-btn {
-        padding: 4px 8px;
+    .lang-btn {
+        margin-top: 10px; /* Adjust spacing for language button */
     }
 
     .header-content {
-        position: unset;
-        transform: none;
-        padding-top: 150px;
+        padding-top: 50px; /* Adjust padding for header content */
     }
 
     .header-content h1 {
         font-size: 30px;
+        line-height: 40px;
+        max-width: 100%; /* Ensure text doesn't overflow on small screens */
     }
 
-    .email-signup button {
-        font-size: 12px;
-        padding: 10px 15px;
+    .email-signup {
+        flex-direction: column; /* Stack input and button vertically on small screens */
     }
 
-    .text-col, .img-col {
-        flex-basis: 100%;
+    .email-signup input {
+        margin: 10px 0; /* Add margin for better spacing */
     }
 
-    .features h2 {
+    .features, .faq {
+        padding: 30px 8%; /* Adjust padding for better spacing on smaller screens */
+    }
+
+    .features h2, .faq h2 {
         font-size: 30px;
+        margin-bottom: 15px; /* Adjust heading size and margin for better readability */
     }
 
-    .features p {
-        font-size: 15px;
+    .row {
+        flex-direction: column;
+        padding: 30px 0; /* Adjust padding for better spacing between rows */
     }
 
-    .row:nth-child(2), .row:nth-child(4) {
-        flex-direction: column-reverse;
+    .img-col img {
+        width: 100%; /* Make images responsive within their containers */
     }
 
-    .features .row {
-        padding: 10px 0;
-    }
-
-    .faq h2 {
-        font-size: 20px;
-    }
-
-    .accordion .content {
-        font-size: 14px;
+    .accordion {
+        margin: 30px auto; /* Adjust margin for better spacing */
     }
 
     .accordion li label {
-        padding: 10px;
-        font-size: 14px;
+        font-size: 16px; /* Adjust font size for better readability */
     }
 
     label::after {
-        font-size: 22px;
+        font-size: 26px;
+    }
+
+    .footer {
+        padding: 30px 8%; /* Adjust padding for better spacing on smaller screens */
+    }
+
+    .footer h2 {
+        font-size: 16px; /* Adjust font size for better readability */
+        margin-bottom: 20px; /* Adjust margin for better spacing */
+    }
+
+    .footer .col {
+        flex-basis: 100%;
+        margin-bottom: 15px; /* Adjust margin for better spacing between columns */
+    }
+
+    .copyright-text {
+        font-size: 12px; /* Adjust font size for better readability */
+        margin-top: 15px; /* Adjust margin for better spacing */
     }
 }
