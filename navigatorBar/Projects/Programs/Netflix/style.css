@@ -262,29 +262,33 @@ input[type="radio"] {
     text-align: center;
 }
 
-/* Existing CSS code */
 
 @media only screen and (max-width: 600px) {
     .logo {
-        width: 100px;
+        width: 80px;
     }
 
     nav button {
-        padding: 5px 10px;
+        padding: 5px 8px;
+        font-size: 10px;
     }
 
     nav .lang-btn {
-        padding: 4px 8px;
+        padding: 4px 6px;
     }
 
     .header-content {
-        position: unset;
-        transform: none;
-        padding-top: 150px;
+        padding-top: 120px;
     }
 
     .header-content h1 {
-        font-size: 30px;
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .header-content h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
     }
 
     .email-signup {
@@ -294,16 +298,12 @@ input[type="radio"] {
     .email-signup input {
         margin-left: 0;
         margin-top: 10px;
+        font-size: 14px;
     }
 
     .signup-button {
-        font-size: 12px;
+        font-size: 14px;
         padding: 10px 15px;
-    }
-
-    .text-col,
-    .img-col {
-        flex-basis: 100%;
     }
 
     .features h2 {
@@ -311,7 +311,7 @@ input[type="radio"] {
     }
 
     .features p {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .row:nth-child(2),
@@ -324,20 +324,21 @@ input[type="radio"] {
     }
 
     .faq h2 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .accordion .content {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .accordion li label {
         padding: 10px;
-        font-size: 14px;
+        font-size: 12px;
     }
 
     label::after {
-        font-size: 22px;
+        font-size: 18px;
     }
 }
+
 
