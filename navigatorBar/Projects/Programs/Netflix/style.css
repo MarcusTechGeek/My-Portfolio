@@ -267,7 +267,7 @@ input[type="radio"] {
 /* Add this section at the end of your CSS file */
 
 /* Improved responsiveness for smaller screens */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     body {
         font-size: 14px; /* Adjust the default font size for better readability on small screens */
     }
