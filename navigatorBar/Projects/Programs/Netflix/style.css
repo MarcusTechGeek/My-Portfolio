@@ -267,13 +267,13 @@ input[type="radio"] {
 /* Add this section at the end of your CSS file */
 
 /* Improved responsiveness for smaller screens */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     body {
         font-size: 14px; /* Adjust the default font size for better readability on small screens */
     }
 
     .header {
-        height: auto;
+        
         padding: 50px 8%; /* Increase padding for better spacing on smaller screens */
     }
 
@@ -324,6 +324,9 @@ input[type="radio"] {
 }
 
 
+    .features{
+        margin-top: 20px;
+    }
     .features, .faq {
         padding: 30px 8%; /* Adjust padding for better spacing on smaller screens */
     }
