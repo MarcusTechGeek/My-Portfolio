@@ -17,8 +17,6 @@
             padding: 0;
         }
 
-        /* Your existing styles here */
-
         header {
             text-align: center;
             padding: 40px 0;
@@ -73,7 +71,6 @@
             color: #007BFF;
         }
 
-        /* New classes for header and footer navbars */
         .navbar-head {
             text-align: center;
         }
@@ -110,35 +107,31 @@
             color: #007BFF;
             margin-bottom: 20px;
         }
-
-        section p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        section h4 {
-            font-size: 1.2em;
-            line-height: 1.6;
+        section h4{
             color: #007BFF;
         }
 
         .thumbnail {
             margin-bottom: 20px;
             text-align: center;
+            background-color: #343a40;
+            border: 2px dashed #007BFF;
+            border-radius: 8px;
+            
         }
 
         .thumbnail img {
             width: 400px;
             height: 350px;
             border-radius: 8px;
+            
         }
 
         .thumbnail-container {
             overflow: hidden;
             border-radius: 8px;
             margin-bottom: 1px;
-            
+            background-color: #343a40;
         }
 
         .caption-container {
@@ -164,7 +157,6 @@
             width: 100%;
             border-radius: 8px;
         }
-
     </style>
 </head>
 
@@ -199,207 +191,18 @@
     <!-- Main Content -->
     <header>
         <h1>Projects</h1>
-        <p>Welcome to my portfolio showcasing personal projects and testers that I have undertaken during my free time. These projects are challenges I set for myself to test my capabilities. Feel free to explore and even challenge yourself to complete some of them!</p>
+        <p> Welcome to my portfolio showcasing personal projects and testers 
+            that I have undertaken during my free time. These projects 
+            are challenges I set for myself to test my capabilities.
+            Feel free to explore and even challenge yourself to complete some of them!
+        </p>
     </header>
 
-    <section>
+    <section id="projectContainer" class="container-fluid text-center">
         <h1>Featured Projects</h1>
-        <div class="col-md-4">
-            <div class="thumbnail-container">
-                <div class="thumbnail">
-                    <a href="Netflix/NetflixClone.html"><img src="Netflix/Netflix.png" alt="Project"></a>
-                </div>
-            </div>
-            <div class="caption-container">
-                <div class="caption">
-                    <h4>Netflix Clone</h4>
-                </div><br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Description
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>This is a non-functional clone of Netflix. This was a team project.</p>
-                    </ul>
-                </div>
-            </div>
+        <div class="row" id="projectsRow">
+            <!-- Projects will be dynamically added here using JavaScript -->
         </div>
-        <div class="col-md-4">
-            <div class="thumbnail-container">
-                <div class="thumbnail">
-                    <a href=""><img src="../Comingsoon.png" alt="Project"></a>
-                </div>
-            </div>
-            <div class="caption-container">
-                <div class="caption">
-                    <h4>Coming Soon!</h4>
-                </div><br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Description
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>Not there yet!</p>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail-container">
-                <div class="thumbnail">
-                    <a href=""><img src="../Comingsoon.png" alt="Project"></a>
-                </div>
-            </div>
-            <div class="caption-container">
-                <div class="caption">
-                    <h4>Coming Soon!</h4>
-                </div><br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Description
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>Not there yet!</p>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail-container">
-                <div class="thumbnail">
-                    <a href=""><img src="../Comingsoon.png" alt="Project"></a>
-                </div>
-            </div>
-            <div class="caption-container">
-                <div class="caption">
-                    <h4>Coming Soon!</h4>
-                </div><br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Description
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>Not there yet!</p>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail-container">
-                <div class="thumbnail">
-                    <a href=""><img src="../Comingsoon.png" alt="Project"></a>
-                </div>
-            </div>
-            <div class="caption-container">
-                <div class="caption">
-                    <h4>Coming Soon!</h4>
-                </div><br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Description
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>Not there yet!</p>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail-container">
-                <div class="thumbnail">
-                    <a href=""><img src="../Comingsoon.png" alt="Project"></a>
-                </div>
-            </div>
-            <div class="caption-container">
-                <div class="caption">
-                    <h4>Coming Soon!</h4>
-                </div><br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Description
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>Not there yet!</p>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail-container">
-                <div class="thumbnail">
-                    <a href=""><img src="../Comingsoon.png" alt="Project"></a>
-                </div>
-            </div>
-            <div class="caption-container">
-                <div class="caption">
-                    <h4>Coming Soon!</h4>
-                </div><br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Description
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>Not there yet!</p>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail-container">
-                <div class="thumbnail">
-                    <a href=""><img src="../Comingsoon.png" alt="Project"></a>
-                </div>
-            </div>
-            <div class="caption-container">
-                <div class="caption">
-                    <h4>Coming Soon!</h4>
-                </div><br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Description
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>Not there yet!</p>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail-container">
-                <div class="thumbnail">
-                    <a href=""><img src="../Comingsoon.png" alt="Project"></a>
-                </div>
-            </div>
-            <div class="caption-container">
-                <div class="caption">
-                    <h4>Coming Soon!</h4>
-                </div><br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Description
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <p>Not there yet!</p>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
     </section>
 
     <!-- Footer Navbar -->
@@ -409,7 +212,7 @@
                 <ul class="nav navbar-nav">
                     <!-- Add links for different pages of projects in the footer -->
                     <!-- Example: -->
-                    <li class="active"><a href="../Projects/Page1.html">Page 1</a></li>
+                    <li class="active"><a href="../Page1/page1.html">Page 1</a></li>
                     <li><a href="../Page2/page2.html">Page 2</a></li>
                     <li><a href="../page3/Page3.html">Page 3</a></li>
                 </ul>
@@ -419,6 +222,50 @@
         <p>Contact me by clicking <a href="../../../../ContactInfo/contactInfo.html">Here</a>.</p>
         <p>If you have any further inquiries or questions, I'd be happy to help.</p>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // Function to add a new project
+        function addProject(link, imagePath, title, description) {
+            // Create project HTML structure
+            var projectHTML = `
+                <div class="col-md-4">
+                    <div class="thumbnail-container">
+                        <div class="thumbnail">
+                            <a href="${link}"><img src="${imagePath}" alt="Project"></a>
+                        </div>
+                    </div>
+                    <div class="caption-container">
+                        <div class="caption">
+                            <h4>${title}</h4>
+                        </div><br>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                Description
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <p>${description}</p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Append the new project to the projectsRow
+            $("#projectsRow").append(projectHTML);
+        }
+
+        addProject("netflix/netfli.html", "netflix/netflix.png", "Netflix Clone", "this is a non functioning clone of netflix, it was a team project.");
+        addProject("YOUR_LINK_HERE", "../Comingsoon.png", "Coming soon", "Not there yet, coming soon");
+        addProject("YOUR_LINK_HERE", "../Comingsoon.png", "Coming soon", "Not there yet, coming soon");
+        addProject("YOUR_LINK_HERE", "../Comingsoon.png", "Coming soon", "Not there yet, coming soon");
+        addProject("YOUR_LINK_HERE", "../Comingsoon.png", "Coming soon", "Not there yet, coming soon");
+        addProject("YOUR_LINK_HERE", "../Comingsoon.png", "Coming soon", "Not there yet, coming soon");
+        addProject("YOUR_LINK_HERE", "../Comingsoon.png", "Coming soon", "Not there yet, coming soon");
+        addProject("YOUR_LINK_HERE", "../Comingsoon.png", "Coming soon", "Not there yet, coming soon");
+        addProject("YOUR_LINK_HERE", "../Comingsoon.png", "Coming soon", "Not there yet, coming soon");
+    </script>
 
 </body>
 
