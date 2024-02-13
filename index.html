@@ -27,7 +27,8 @@
             padding: 80px 0;
         }
 
-        .jumbotron h1, .jumbotron h2 {
+        .jumbotron h1,
+        .jumbotron h2 {
             color: #333;
         }
 
@@ -74,8 +75,28 @@
         .container-fluid.bg-3 img {
             border-radius: 6px;
         }
+
         a:hover {
             border-bottom: 2px solid #007BFF;
+        }
+
+        /* New class for project cards */
+        .project-card {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 6px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+        .project-card p {
+            margin-top: 10px;
+            font-size: 2.2em;
+            color: #555;
         }
     </style>
 </head>
@@ -121,66 +142,51 @@
     <div class="container-fluid bg-3 text-center">
         <h3>Some work I did while studying at Code College</h3>
         <h3>Please click on the photos to open the programs</h3>
-        <h3>You may peruse my pages by utilizing the dropdown menu (if accessing from a mobile device) or by utilizing the fixed navigation bar located at the top of your screen.</h3>
-        <div class="row">
-            <center>
-            <div class="col-sm-3">
-                <p>Robo Dance</p>
-                <a href="Dummies_Book/Chapter7/chapter7.html"><img src="Dummies_Book/Chapter7/robo.jpg"
-                        class="img-responsive" style="width:100%" alt="Image"></a>
-            </div>
-            <div class="col-sm-3">
-                <p>Hang Man</p>
-                <a href="Kids_Book/Chapter8/challange3.html"><img src="Kids_Book/Chapter8/hangman.jpg"
-                        class="img-responsive" style="width:60%" alt="Image"></a>
-            </div>
-            <div class="col-sm-3">
-                <p>Train Smash</p>
-                <a href="Dummies_Book/Chapter12/chapter12.html"><img src="Dummies_Book/Chapter12/Train.jpg"
-                        class="img-responsive" style="width:70%" alt="Image"></a>
-            </div>
-            <div class="col-sm-3">
-                <p>Wishing List</p>
-                <a href="Dummies_Book/Chapter13/chapter13.html"><img src="Dummies_Book/Chapter13/Wishlist.png"
-                        class="img-responsive" style="width:100%" alt="Image"></a>
-            </div>
-            </center>
+        <h3>You may peruse my pages by utilizing the dropdown menu (if accessing from a mobile device) or by utilizing
+            the fixed navigation bar located at the top of your screen.</h3>
+        <div class="row" id="project-cards">
+            <!-- Project cards will be generated here using JavaScript -->
         </div>
     </div>
 
-    <div class="container-fluid bg-3 text-center">
-        <div class="row">
-            <center>
-            <div class="col-sm-3">
-                <p>Number Guess</p>
-                <a href="Assignments/Geuss_Game_Marcus_Gouws/geussgame_marcus_gouws.html"><img
-                        src="Assignments/Geuss_Game_Marcus_Gouws/Geuss.png" class="img-responsive" style="width:100%"
-                        alt="Image"></a>
-            </div>
-            <div class="col-sm-3">
-                <p>Let's do Shopping!</p>
-                <a href="Assignments/Sopping_Cart_Marcus_Gouws/Sopping_Cart_Marcus_Gouws.html"><img
-                        src="Assignments/Sopping_Cart_Marcus_Gouws/Cart.png" class="img-responsive" style="width:90%"
-                        alt="Image"></a>
-            </div>
-            <div class="col-sm-3">
-                <p>Weather Forecast</p>
-                <a href="Dummies_Book/Chapter17/chapter17.html"><img src="Dummies_Book/Chapter17/weather.png"
-                        class="img-responsive" style="width:90%" alt="Image"></a>
-            </div>
-            <div class="col-sm-3">
-            <p>What to do?</p>
-            <a href="Dummies_Book/Chapter15/chapter15.html"><img src="Dummies_Book/Chapter15/Thinking.png"
-                    class="img-responsive" style="width:90%" alt="Image"></a>        
-        </div>
-        </center>  
-    </div>
-</div>
+    <footer class="container-fluid text-center">
+        Contact me by clicking <a href="navigatorBar/ContactInfo/contactInfo.html">Here</a>.
+        <p>Should you have any further inquiries or questions</p>
+    </footer>
 
-<footer class="container-fluid text-center">
-    Contact me by clicking <a href="navigatorBar/ContactInfo/contactInfo.html">Here</a>.
-    <p>Should you have any further inquiries or questions</p>
-</footer>
+    <script>
+        // Function to generate project cards dynamically
+        function generateProjectCard(title, href, imagePath, description) {
+            return `
+                <div class="col-sm-4">
+                    <div class="project-card">
+                        <p>${title}</p>
+                        <a href="${href}"><img src="${imagePath}" alt="${title}" class="img-responsive"></a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Array of project details
+        const projects = [
+            { title: 'Robo Dance', href: 'Dummies_Book/Chapter7/chapter7.html', imagePath: 'Dummies_Book/Chapter7/robo.jpg' },
+            { title: 'Hang Man', href: 'Kids_Book/Chapter8/challange3.html', imagePath: 'Kids_Book/Chapter8/hangman.jpg' },
+            { title: 'Train Smash', href: 'Dummies_Book/Chapter12/chapter12.html', imagePath: 'Dummies_Book/Chapter12/Train.jpg'},
+            { title: 'Wishing List', href: 'Dummies_Book/Chapter13/chapter13.html', imagePath: 'Dummies_Book/Chapter13/Wish.jpg' },
+            { title: 'Number Guess', href: 'Assignments/Geuss_Game_Marcus_Gouws/geussgame_marcus_gouws.html', imagePath: 'Assignments/Geuss_Game_Marcus_Gouws/Geuss.jpg' },
+            { title: 'Let\'s do Shopping!', href: 'Assignments/Sopping_Cart_Marcus_Gouws/Sopping_Cart_Marcus_Gouws.html', imagePath: 'Assignments/Sopping_Cart_Marcus_Gouws/Cart.jpg' },
+            { title: 'Weather Forecast', href: 'Dummies_Book/Chapter17/chapter17.html', imagePath: 'Dummies_Book/Chapter17/weather.jpg' },
+            { title: 'What to do?', href: 'Dummies_Book/Chapter15/chapter15.html', imagePath: 'Dummies_Book/Chapter15/Thinking.jpg' },
+            { title: 'View me projects page!', href: 'navigatorBar/Projects/Programs/Pages/Page1/page1.html', imagePath: 'navigatorBar/Projects/project.jpg' },
+            // Add more projects as needed
+        ];
+
+        // Append project cards to the 'project-cards' div
+        const projectCardsContainer = document.getElementById('project-cards');
+        projects.forEach(project => {
+            projectCardsContainer.innerHTML += generateProjectCard(project.title, project.href, project.imagePath, project.description);
+        });
+    </script>
 
 </body>
 
