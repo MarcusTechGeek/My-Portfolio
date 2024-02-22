@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata for character set and viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Title of the webpage -->
+  <title>Spinning Venus Sphere with Mouse Controls</title>
+  
+  <!-- Import the Three.js library for 3D graphics -->
+  <script type="module" src="https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js"></script>
+  
+  <!-- Import the OrbitControls module for mouse controls -->
+  <script type="module" src="https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/controls/OrbitControls.js"></script>
+  
+  <!-- JavaScript code begins -->
+  <script type="module">
+    // Import necessary modules from Three.js
+    import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js';
+    import { OrbitControls } from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/controls/OrbitControls.js';
+
+    // Set up the 3D scene
+    const scene = new THREE.Scene();
+
+    // Set up the camera for perspective viewing
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 5;  // Set the initial camera position
+
+    // Set up the renderer for rendering 3D content
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Load Venus surface texture from a local path
+    const surfaceTexture = new THREE.TextureLoader().load('venus_atmosphere.jpg');
+
+    // Load Venus atmosphere texture from a local path
+    const atmosphereTexture = new THREE.TextureLoader().load('venus_surface.jpg');
+
+    // Create a custom material with both surface and atmosphere textures
+    const customMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        surfaceTexture: { value: surfaceTexture },
+        atmosphereTexture: { value: atmosphereTexture },
+        mixRatio: { value: 0.0 } // Initialize to fully show surface
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D surfaceTexture;
+        uniform sampler2D atmosphereTexture;
+        uniform float mixRatio;
+        varying vec2 vUv;
+        void main() {
+          vec3 surfaceColor = texture(surfaceTexture, vUv).rgb;
+          vec3 atmosphereColor = texture(atmosphereTexture, vUv).rgb;
+          gl_FragColor = mix(vec4(atmosphereColor, 1.0), vec4(surfaceColor, 1.0), mixRatio);
+        }
+      `
+    });
+
+    // Create a 3D sphere (Venus) with the custom material
+    const venusGeometry = new THREE.SphereGeometry(2, 32, 32);
+    const venusSphere = new THREE.Mesh(venusGeometry, customMaterial);
+
+    // Add the Venus sphere to the 3D scene
+    scene.add(venusSphere);
+
+    // Set up mouse controls for interactive rotation
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true; // An animation loop is required when either damping or auto-rotation are enabled
+    controls.dampingFactor = 0.25;
+    controls.screenSpacePanning = false;
+    controls.maxPolarAngle = Math.PI; // Allow camera to rotate freely
+
+    // Flag to determine if rotation should be paused
+    let rotationPaused = false;
+
+    // Set up raycaster for click detection
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    // Handle click event to pause/resume rotation
+    document.addEventListener('click', function (event) {
+      // Calculate normalized device coordinates (-1 to +1) for the mouse position
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      // Set the raycaster's origin and direction based on the mouse position
+      raycaster.setFromCamera(mouse, camera);
+
+      // Check if the ray intersects with the Venus sphere
+      const intersects = raycaster.intersectObject(venusSphere);
+
+      // Toggle rotation pause if the Venus sphere is clicked
+      if (intersects.length > 0) {
+        rotationPaused = !rotationPaused;
+      }
+    });
+
+    // Add background image
+    const backgroundTexture = new THREE.TextureLoader().load('../background.jpg');
+    scene.background = backgroundTexture;
+
+    // Set up the animation loop
+    const animate = function () {
+      requestAnimationFrame(animate);
+
+      // Rotate the Venus sphere gradually if rotation is not paused
+      if (!rotationPaused) {
+        venusSphere.rotation.y += 0.005;
+      }
+
+      // Update mouse controls
+      controls.update();
+
+      // Update the mix ratio based on the distance from the camera to Venus
+      const distance = camera.position.distanceTo(venusSphere.position);
+      const maxDistance = 10; // Adjust as needed
+      customMaterial.uniforms.mixRatio.value = Math.min(1, distance / maxDistance);
+
+      // Render the scene with the camera
+      renderer.render(scene, camera);
+    };
+
+    // Handle window resize events
+    window.addEventListener('resize', function () {
+      const newWidth = window.innerWidth;
+      const newHeight = window.innerHeight;
+
+      // Adjust the camera aspect ratio and update its projection matrix
+      camera.aspect = newWidth / newHeight;
+      camera.updateProjectionMatrix();
+
+      // Resize the renderer to fit the new window dimensions
+      renderer.setSize(newWidth, newHeight);
+    });
+
+    // Start the animation loop
+    animate();
+  </script>
+  <!-- JavaScript code ends -->
+</head>
+<body>
+</body>
+</html>
