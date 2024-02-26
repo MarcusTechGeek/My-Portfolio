@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Projects</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #343a40;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 2px solid #007BFF;
+            border-bottom: 2px solid #007BFF;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        footer {
+            background-color: #343a40;
+            padding: 25px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            border-top: 2px solid #007BFF;
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        header p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #777;
+        }
+
+        section {
+            padding: 40px 20px;
+            background-color: #343a40;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h1 {
+            font-size: 2em;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+        section h4{
+            color: #007BFF;
+            font-size: 3em;
+        }
+
+        .thumbnail {
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: #343a40;
+            border: 2px dashed #000000;
+            border-color: transparent;
+            border-radius: 8px;
+        }
+
+        .thumbnail img {
+            width: 400px;
+            height: 350px;
+            border-radius: 8px;
+        }
+
+        .thumbnail-container {
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 1px;
+        }
+
+        .caption-container {
+            text-align: center;
+        }
+
+        .thumbnail p {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .caption {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Main Content -->
+    <header>
+        <h1>Teaser for our solar system!</h1>
+    </header>
+
+    <section id="projectContainer" class="container-fluid text-center">
+        <div class="row" id="projectsRow">
+            <!-- Projects will be dynamically added here using JavaScript -->
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // Function to add a new project
+        function addProject(link, imagePath, title, description) {
+            // Create project HTML structure
+            var projectHTML = `
+                <div class="col-md-4">
+                    <div class="thumbnail-container">
+                        <div class="thumbnail">
+                            <a href="${link}"><img src="${imagePath}" alt="Project"></a>
+                        </div>
+                    </div>
+                    <div class="caption-container">
+                        <div class="caption">
+                            <h4>${title}</h4>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Append the new project to the projectsRow
+            $("#projectsRow").append(projectHTML);
+        }
+
+        // Example usage:
+        addProject("sun/sun.html", "sun/sunr.jpg", "sun");
+        addProject("mercury/mercury.html", "mercury/mercuryy.jpg", "Mercury");
+        addProject("venus/venus.html", "venus/venus.jpg", "venus");
+        addProject("earth/earth.html", "earth/earthh.jpg", "Earth");
+        addProject("Mars/mars.html", "Mars/marss.jpg", "Mars");
+        addProject("jupiter/jupiter.html", "Jupiter/jupiterr.jpg", "Jupiter");
+        addProject("saturn/saturn.html", "saturn/saturnn.jpg", "Saturn");
+        addProject("uranus/uranus.html", "uranus/uranuss.jpg", "Uranus");
+        addProject("Neptune/Neptune.html", "Neptune/neptunee.jpg", "Neptune");
+    </script>
+
+</body>
+
+</html>
