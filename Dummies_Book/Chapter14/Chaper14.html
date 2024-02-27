@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaaa!!!!</title>
+    <link rel="stylesheet" href="Chaper14.css">
+</head>
+<body>
+    <h1>The Pizzeria</h1>
+
+<div id="orderForm">
+    <label>How many pizzas do you want?
+        <input type="number" id="numPizzas" />
+    </label>
+    <br />
+    <br />
+    <label>What kind of pizzas?
+        <select id="typePizza">
+            <option value="cheese">Cheese</option>
+            <option value="pepperoni">Pepperoni</option>
+            <option value="Rib&Cheese">Rib&Cheese</option>
+            <option value="Steak">Steak</option>
+        </select>
+    </label>
+    <br />
+    <br />
+    <label>Where do you live?
+        <select id="deliveryCity">
+            <option value="KemptonPark">Kempton Park</option>
+            <option value="Edenvale">Edenvale</option>
+            <option value="Spartan">Spartan</option>
+            <option value="Silverlakes">Silverlakes</option>
+            <option value="Sarengeti">Sarengeti</option>
+        </select>
+    </label>
+        <br />
+        <br />
+    <label>When is your birthday? 
+            <label for="datepicker"></label>
+            <input id="Birthday" type="date" id="datepicker" name="datepicker">
+
+    </label>
+    <br><br>
+        <button type="button" id="placeOrder">Place Order</button>
+        <br><br>
+        <button type="button"id="tip">Add tip?</button>
+</div>
+<div id="displayTotal"></div>
+<script src="Chapter14.js"></script>
+</body>
+</html>
