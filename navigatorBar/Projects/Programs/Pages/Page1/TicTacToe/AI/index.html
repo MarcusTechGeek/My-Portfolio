@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI</title>
+    <style>
+        .body{
+            background-color: #555;
+        }
+        .container {
+            color:aliceblue ;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #555;
+        }
+
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .player-score {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+        }
+
+        .cell {
+            background-color: #333;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+        }
+
+        #resetButton {
+            background-color:blue;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="container">
+        <div class="scoreboard">
+            <div class="player-score">
+                <span class="player-x">Human: </span>
+                <span id="playerXScore">0</span>
+            </div>
+            <div class="player-score">
+                <span class="player-o">AI: </span>
+                <span id="playerOScore">0</span>
+            </div>
+        </div>
+        <div class="board" id="board">
+            <div class="cell" id="1"></div>
+            <div class="cell" id="2"></div>
+            <div class="cell" id="3"></div>
+            <div class="cell" id="4"></div>
+            <div class="cell" id="5"></div>
+            <div class="cell" id="6"></div>
+            <div class="cell" id="7"></div>
+            <div class="cell" id="8"></div>
+            <div class="cell" id="9"></div>
+        </div>
+        <button id="resetButton">Reset Game</button>
+    </div>
+
+    <script>
+let board = ['', '', '', '', '', '', '', '', ''];
+const winningCombos = [
+  [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontal
+  [0, 3, 6], [1, 4, 7], [2, 5, 8], // Vertical
+  [0, 4, 8], [2, 4, 6] // Diagonal
+];
+let isWin = false;
+let isTie = false;
+let playerXScore = 0;
+let playerOScore = 0;
+let userMoves = [];
+let previousLoss = [];
+
+function handleClick(event) {
+  const cell = event.target;
+  const cellIndex = parseInt(cell.id) - 1;
+
+  if (board[cellIndex] !== '') {
+    alert('Cell is already occupied!');
+    return;
+  }
+
+  board[cellIndex] = 'X';
+  cell.textContent = 'X';
+  userMoves.push(cellIndex);
+  updateBoard();
+
+  if (checkWin('X')) {
+    isWin = true;
+    highlightWinningCells('X');
+    updateScore('X');
+    previousLoss = userMoves.slice(); // Save user's winning moves
+    setTimeout(resetGame, 2000);
+    return;
+  }
+
+  const bestMove = getBestMove();
+  if (bestMove !== -1) {
+    board[bestMove] = 'O';
+    updateBoard();
+    const cell = document.getElementById(`${bestMove + 1}`);
+    cell.textContent = 'O';
+  }
+
+  if (checkWin('O')) {
+    isWin = true;
+    highlightWinningCells('O');
+    updateScore('O');
+    setTimeout(resetGame, 2000);
+    return;
+  }
+
+  isTie = !isWin && !board.includes('');
+  if (isTie) {
+    displayResult();
+    resetGame();
+  }
+}
+
+function getBestMove() {
+  // Check if AI can win
+  const winningMove = getWinningMove('O');
+  if (winningMove !== -1) {
+    return winningMove;
+  }
+
+  // Check if user can win and block them
+  const blockingMove = getWinningMove('X');
+  if (blockingMove !== -1) {
+    return blockingMove;
+  }
+
+  // Check if user is trying to repeat a previous winning move
+  const preventedMove = getPreventedMove();
+  if (preventedMove !== -1) {
+    return preventedMove;
+  }
+
+  // Play a random move
+  const availableMoves = board.reduce((moves, value, index) => {
+    if (value === '') {
+      moves.push(index);
+    }
+    return moves;
+  }, []);
+
+  if (availableMoves.length > 0) {
+    const randomIndex = Math.floor(Math.random() * availableMoves.length);
+    return availableMoves[randomIndex];
+  }
+
+  return -1;
+}
+
+function getWinningMove(symbol) {
+  for (const combo of winningCombos) {
+    const [a, b, c] = combo;
+    if (board[a] === symbol && board[b] === symbol && board[c] === '') {
+      return c;
+    } else if (board[a] === symbol && board[b] === '' && board[c] === '') {
+      return b;
+    } else if (board[a] === '' && board[b] === symbol && board[c] === symbol) {
+      return a;
+    }
+  }
+  return -1;
+}
+
+function getPreventedMove() {
+  // Check for previous loss
+  if (previousLoss.length === 3) {
+    const blockingIndex = winningCombos.find(combo =>
+      combo.every(index => previousLoss.includes(index))
+    );
+    if (blockingIndex) {
+      const emptyIndex = blockingIndex.find(index => board[index] === '');
+      return emptyIndex;
+    }
+  }
+
+  // Check for user's current moves
+  for (const combo of winningCombos) {
+    const userMoveIndices = combo.filter(index => userMoves.includes(index));
+    if (userMoveIndices.length === 2) {
+      const emptyIndex = combo.find(index => board[index] === '');
+      return emptyIndex;
+    }
+  }
+  return -1;
+}
+
+function checkWin(symbol) {
+  return winningCombos.some(combo => {
+    return combo.every(index => board[index] === symbol);
+  });
+}
+
+function updateBoard() {
+  const cells = document.querySelectorAll('.cell');
+  cells.forEach((cell, index) => {
+    cell.textContent = board[index];
+    cell.style.color = 'white';
+  });
+}
+
+function highlightWinningCells(symbol) {
+  const winningCombo = winningCombos.find(combo =>
+    combo.every(index => board[index] === symbol)
+  );
+
+  if (winningCombo) {
+    winningCombo.forEach(index => {
+      const cell = document.getElementById(`${index + 1}`);
+      cell.style.backgroundColor = 'rgb(32, 255, 117)';
+    });
+  }
+}
+
+function updateScore(symbol) {
+  if (symbol === 'X') {
+    playerXScore++;
+    document.getElementById('playerXScore').textContent = playerXScore;
+  } else {
+    playerOScore++;
+    document.getElementById('playerOScore').textContent = playerOScore;
+  }
+}
+
+function displayResult() {
+  alert('It\'s a tie!');
+}
+
+function resetGame() {
+  const cells = document.querySelectorAll('.cell');
+  cells.forEach(cell => {
+    cell.textContent = '';
+    cell.style.backgroundColor = '#333';
+    cell.style.color = 'white';
+  });
+  board = ['', '', '', '', '', '', '', '', ''];
+  userMoves = [];
+  previousLoss = [];
+  isWin = false;
+  isTie = false;
+}
+
+const cells = document.querySelectorAll('.cell');
+cells.forEach(cell => {
+  cell.addEventListener('click', handleClick);
+});
+
+const resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', resetGame);
+</script>
+</body>
+</html>

@@ -1,2 +1,0 @@
-This is my work compleaded during my intro to programming course at Code College, the books we used as well as the work i have completedare uploaded in seperate folders. 
-The building blocks to my portfolio website is also included saved as index.html. feel free to scroll around and have a look at what i have learned and created:)

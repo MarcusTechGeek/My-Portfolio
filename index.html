@@ -98,6 +98,10 @@
             font-size: 2.2em;
             color: #555;
         }
+
+        .row{
+            justify-content: center;
+        }
     </style>
 </head>
 
@@ -144,7 +148,7 @@
         <h3>Please click on the photos to open the programs</h3>
         <h3>You may peruse my pages by utilizing the dropdown menu (if accessing from a mobile device) or by utilizing
             the fixed navigation bar located at the top of your screen.</h3>
-            <h2>Please note that these projects are assigned during my courses, this projects will be replaced during the course of the year of 2024 and will e repllaced by my projects page when i am done with my studies. visit my Projects page to view my personal projects.</h2>
+          
         <div class="row" id="project-cards">
             <!-- Project cards will be generated here using JavaScript -->
         </div>
@@ -161,8 +165,9 @@
             return `
                 <div class="col-sm-4">
                     <div class="project-card">
-                        <p>${title}</p>
+                        
                         <a href="${href}"><img src="${imagePath}" alt="${title}" class="img-responsive"></a>
+                        <p>${title}</p>
                     </div>
                 </div>
             `;
@@ -170,16 +175,9 @@
 
         // Array of project details
         const projects = [
-            { title: 'Robo Dance', href: 'Dummies_Book/Chapter7/chapter7.html', imagePath: 'Dummies_Book/Chapter7/robo.jpg' },
-            { title: 'Hang Man', href: 'Kids_Book/Chapter8/challange3.html', imagePath: 'Kids_Book/Chapter8/hangman.jpg' },
-            { title: 'Train Smash', href: 'Dummies_Book/Chapter12/chapter12.html', imagePath: 'Dummies_Book/Chapter12/Train.jpg'},
-            { title: 'Wishing List', href: 'Dummies_Book/Chapter13/chapter13.html', imagePath: 'Dummies_Book/Chapter13/Wish.jpg' },
-            { title: 'Number Guess', href: 'Assignments/Geuss_Game_Marcus_Gouws/geussgame_marcus_gouws.html', imagePath: 'Assignments/Geuss_Game_Marcus_Gouws/geussing.jpg' },
-            { title: 'Do Some Shopping!', href: 'Assignments/Sopping_Cart_Marcus_Gouws/Sopping_Cart_Marcus_Gouws.html', imagePath: 'Assignments/Sopping_Cart_Marcus_Gouws/CCarts.jpg' },
-            { title: 'Weather Forecast', href: 'Dummies_Book/Chapter17/chapter17.html', imagePath: 'Dummies_Book/Chapter17/weather.jpg' },
-            { title: 'What to do?', href: 'Dummies_Book/Chapter15/chapter15.html', imagePath: 'Dummies_Book/Chapter15/Thhink.jpg' },
-            { title: 'View me projects page!', href: 'navigatorBar/Projects/Programs/Pages/Page1/page1.html', imagePath: 'navigatorBar/Projects/project.jpg' },
-            // Add more projects as needed
+            { title: 'Tic Tac Toe!', href: 'navigatorBar/Projects/Programs/Pages/Page1/TicTacToe/index.html', imagePath: 'navigatorBar/Projects/Programs/Pages/Page1/TicTacToe/Images/TicTacToe.jpg' },
+            { title: 'View me projects page, to see all my projects!', href: 'navigatorBar/Projects/Programs/Pages/Page1/page1.html', imagePath: 'navigatorBar/Projects/project.jpg' },
+            { title: 'My Exprerience', href: 'navigatorBar/Experiances/Experiances.html', imagePath: 'navigatorBar/Experiances/Certificates/Experience.jpg' },
             
         ];
 
