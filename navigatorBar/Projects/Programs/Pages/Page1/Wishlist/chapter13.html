@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wish List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="chapter13.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="listPage">
+    <h1>Wish List <i class="fas fa-clipboard-list"></i></h1>
+    <div id="fromArea">
+      <label>
+        <i class="fas fa-gift"></i> What I want:
+        <input type="text" id="iWant" placeholder="Enter your wish here" />
+      </label>
+      <br><br>
+      <label>
+        <i class="fas fa-link"></i> The Link:
+        <input type="text" id="link" placeholder="Enter the link here" />
+      </label>
+      <br><br>
+      <button id="add" class="btn"><i class="fas fa-plus"></i> Add to List</button>
+      <button id="print" class="btn"><i class="fas fa-print"></i> Print</button>
+      <button id="email" class="btn"><i class="fas fa-envelope"></i> Email</button>
+      <br><br>
+      <button id="clearStorage" class="btn"><i class="fas fa-trash"></i> Clear List</button>
+    </div>
+    <div>
+      <ul id="wishlist"></ul>
+    </div>
+  </div>
+  <script src="chapter13.js"></script>
+</body>
+</html>

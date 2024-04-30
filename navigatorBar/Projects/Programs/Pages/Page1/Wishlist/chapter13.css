@@ -1,0 +1,129 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #listPage {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+  }
+  
+  .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+    font-size: 14px;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+  
+  #wishlist {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+  
+  #wishlist li {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #wishlist li a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  #wishlist li a:hover {
+    text-decoration: underline;
+  }
+  
+  #wishlist li .remove-btn {
+    background-color: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  #wishlist li .remove-btn:hover {
+    color: #333;
+  }
+  
+  /* Media query for mobile phones */
+  @media (max-width: 480px) {
+    #listPage {
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    input[type="text"] {
+      font-size: 12px;
+    }
+  
+    .btn {
+      font-size: 12px;
+      padding: 8px 16px;
+      margin-right: 5px;
+    }
+  
+    #wishlist li {
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    #wishlist li a {
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  }
