@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Different types of Blue */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#result,
+#analytics {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto; /* Adjusted margin to maintain spacing */
+  padding-top: 50px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+table {
+  margin-top: 30px;
+  width: 100%; /* Make sure table takes full width */
+}
+
+th,
+td {
+  padding: 10px; /* Adding padding to cells for spacing */
+}
+
+th {
+  background-color: #f5f5f5; /* Adding background color to header cells */
+}
+
+/* Centering table cells */
+.table {
+  border-collapse: collapse; /* Collapse border spacing */
+  margin: 0 auto; /* Center table horizontally */
+}
+
+th.text-center {
+  text-align: center;
+}
+
+
+th.text-center {
+  text-align: center;
+}
+
+/* Custom Styles */
+
+/* Light Grey */
+.container,
+.form-control,
+#result,
+#analytics,
+.table {
+  background-color: #f5f5f5;
+}
+
+/* Dark Grey */
+.btn-primary {
+  background-color: #343a40; /* Dark Grey */
+}
+
+.btn-primary:hover {
+  background-color: #23272b; /* Darker Grey */
+}
+
+/* Media Query for Mobile View */
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  table {
+    margin-top: 20px;
+  }
+
+  .table td.url-column {
+    max-width: 150px; /* Adjust the maximum width as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  button {
+    padding: 8px 16px; /* Adjust padding for smaller button size */
+    font-size: 14px; /* Adjust font size if necessary */
+  }
+}
