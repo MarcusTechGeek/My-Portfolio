@@ -181,7 +181,6 @@
     </section>
 
     <script>
-        // Calculate and display age dynamically
         document.getElementById('age').innerText = calculateAge('2004/02/24');
 
         function calculateAge(birthdate) {
@@ -189,7 +188,6 @@
             const currentDate = new Date();
             const age = currentDate.getFullYear() - birthDate.getFullYear();
 
-            // Adjust age if birthday hasn't occurred yet this year
             if (currentDate.getMonth() < birthDate.getMonth() ||
                 (currentDate.getMonth() === birthDate.getMonth() &&
                     currentDate.getDate() < birthDate.getDate())) {

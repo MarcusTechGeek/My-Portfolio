@@ -59,9 +59,6 @@ function checkOut(){
 
 
 function display_all() {
-
-
-
     var myTable = "<table><th style='width: 100px; color: red; text-align: right;'>Num</th>";
     myTable += "<th style='width: 100px; color: red; text-align: right;'>Item</th>";
     myTable += "<th style='width: 100px; color: red; text-align: right;'>Price</th>";
@@ -70,7 +67,6 @@ function display_all() {
     myTable += "<th style='width: 100px; color: red; text-align: right;'>Remove</th>";
     myTable += "<th style='width: 100px; color: red; text-align: right;'>Add</th>";
     
-   
       for (i = 0; i < items.length; i++) {
       myTable += "<tr><td style='width: 100px; text-align: right;'>" + nums[i] + "</td>";
       myTable += "<td style='width: 100px; text-align: right;'>" + items[i] + "</td>";  // Corrected this line
@@ -81,14 +77,10 @@ function display_all() {
       myTable += "<td style='width: 100px; text-align: right;'><button onclick='add_selection(" + i + ")'>Add</button></td>";
     }
 
-
-   
-   
     myTable += "</table>";
     // myTable += "<br/><br/><p>Total: " + totalOrderAmt + "</p>";
      myTable += "<td style='width: 100px; text-align: right;'><button onclick='checkOut()'>Checkout</button></td>";
      
-
 
     //document.write(myTable);
     document.getElementById("demo").innerHTML = myTable;
