@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Name Stand Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Nameplates_Styles.css" />
+</head>
+<body>
+
+<header class="header no-print">
+  <h1>Name Stand Generator</h1>
+  <p>A4 · Portrait · Print-exact · Static</p>
+</header>
+
+<main class="container">
+
+  <section class="card no-print">
+    <h2>Add names</h2>
+    <div class="row">
+      <input id="nameInput" placeholder="Enter name" />
+      <button id="addBtn">Add</button>
+    </div>
+    <ul id="nameList"></ul>
+  </section>
+
+  <section class="card print-wrapper">
+    <div id="pages"></div>
+  </section>
+
+  <button id="printBtn" class="print-btn no-print" disabled>
+    Print / Save as PDF
+  </button>
+
+</main>
+
+<script src="Nameplates.js"></script>
+</body>
+</html>
