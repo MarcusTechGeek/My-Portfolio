@@ -23,7 +23,6 @@ body{
   line-height:1.5;
 }
 
-/* UI header & layout (kept from original) */
 .header{
   background:linear-gradient(to bottom,#ffffff,#f8fafc);
   text-align:center;
@@ -82,7 +81,6 @@ button:active{transform:translateY(1px)}
 .print-btn{width:100%;padding:1rem;font-size:1.05rem;font-weight:600;border-radius:14px;background:var(--ink);color:#fff}
 .print-btn:disabled{background:#9ca3af;cursor:not-allowed}
 
-/* PAGE (A4) - exact geometry, deterministic dividers */
 .page{
   width:210mm;
   height:297mm;
@@ -93,53 +91,37 @@ button:active{transform:translateY(1px)}
   page-break-after:always;
   break-after:page;
   border:1px dotted var(--rule-light);
-
-  /* three horizontal dotted dividers placed precisely in millimeters */
   background-image:
-    repeating-linear-gradient(to right, var(--rule-light) 0 1px, transparent 1px 6px),
-    repeating-linear-gradient(to right, var(--rule-light) 0 1px, transparent 1px 6px),
-    repeating-linear-gradient(to right, var(--rule-light) 0 1px, transparent 1px 6px);
-  background-position: 0 74.25mm, 0 148.5mm, 0 222.75mm;
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
+    repeating-linear-gradient(to right,var(--rule-light) 0 1px,transparent 1px 6px),
+    repeating-linear-gradient(to right,var(--rule-light) 0 1px,transparent 1px 6px),
+    repeating-linear-gradient(to right,var(--rule-light) 0 1px,transparent 1px 6px);
+  background-position:0 74.25mm,0 148.5mm,0 222.75mm;
+  background-size:100% 1px;
+  background-repeat:no-repeat;
 }
 
-/* ensure no extra gap between pages when printed */
-.page + .page { margin-top: 0; }
+.page + .page{margin-top:0}
 
-/* quarter cells */
 .quarter{display:flex;align-items:center;justify-content:center}
 
-/* name card */
 .name-card{
   width:88%;
   height:68%;
   position:relative;
   border:2px solid var(--rule);
   overflow:hidden;
-  background-clip:padding-box;
 }
 
-/* inner frame and fold guides (vertical dotted guides) */
-.inner-frame{position:absolute;inset:12px;border:1.5px solid var(--rule)}
-.fold-guides{
+.inner-frame{
   position:absolute;
-  inset:0;
-  background:
-    linear-gradient(to right, transparent 24.9%, var(--rule-light) 25%, transparent 25.1%),
-    linear-gradient(to right, transparent 49.9%, var(--rule-light) 50%, transparent 50.1%),
-    linear-gradient(to right, transparent 74.9%, var(--rule-light) 75%, transparent 75.1%);
-  background-repeat:no-repeat;
+  inset:12px;
+  border:1.5px solid var(--rule);
 }
 
-/* diagonal ornaments */
-.diag{position:absolute;width:140%;height:0;border-top:1.5px solid var(--rule);opacity:.35}
-.d1{top:8%;left:-20%;transform:rotate(45deg)}
-.d2{bottom:8%;right:-20%;transform:rotate(45deg)}
-.d3{top:8%;right:-20%;transform:rotate(-45deg)}
-.d4{bottom:8%;left:-20%;transform:rotate(-45deg)}
+.fold-guides{display:none}
 
-/* name */
+.diag{display:none}
+
 .name{
   position:relative;
   z-index:5;
@@ -155,7 +137,6 @@ button:active{transform:translateY(1px)}
   letter-spacing:.6px;
 }
 
-/* mobile preview scaling only (screen) */
 @media screen and (max-width:768px){
   body{overflow-x:hidden}
   .container{padding:.75rem}
@@ -168,7 +149,6 @@ button:active{transform:translateY(1px)}
   .header p{font-size:.85rem}
 }
 
-/* print reset - remove any transforms and ensure exact page geometry */
 @media print{
   body{background:#fff}
   .no-print{display:none !important}
