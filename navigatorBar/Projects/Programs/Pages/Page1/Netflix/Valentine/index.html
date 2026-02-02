@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>⚠️ Valentine Protocol ⚠️</title>
+
+<style>
+:root {
+  --pink:#ff2f92;
+  --dark:#5b0030;
+}
+
+* { box-sizing:border-box; font-family: "Georgia", serif; }
+
+body {
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  background:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* 🌌 COSMOS */
+canvas {
+  position:fixed;
+  inset:0;
+  z-index:0;
+}
+
+/* 💌 CARD */
+.card {
+  position:relative;
+  z-index:5;
+  background:#fff7fb;
+  border:5px solid var(--pink);
+  border-radius:20px;
+  width:min(800px,95vw);
+  padding:34px;
+  box-shadow:0 40px 120px rgba(255,47,146,.45);
+  text-align:center;
+  animation: calm 6s infinite alternate;
+}
+
+@keyframes calm {
+  from { box-shadow:0 30px 80px rgba(255,47,146,.25); }
+  to   { box-shadow:0 50px 140px rgba(255,47,146,.45); }
+}
+
+.duck {
+  font-size:56px;
+  animation: duckFloat 1.4s infinite;
+}
+
+@keyframes duckFloat {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+h1 {
+  color:var(--dark);
+  margin:10px 0;
+}
+
+.subtitle {
+  font-size:14px;
+  opacity:.85;
+  margin-bottom:22px;
+}
+
+.controls {
+  position:relative;
+  height:170px;
+}
+
+button {
+  position:absolute;
+  padding:14px 36px;
+  font-size:18px;
+  border-radius:12px;
+  border:3px solid var(--pink);
+  background:white;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+#yes {
+  left:calc(50% - 170px);
+  top:50px;
+}
+
+#no {
+  left:calc(50% + 30px);
+  top:50px;
+}
+
+/* 💻 SYSTEM LOG */
+.log {
+  font-family:monospace;
+  background:#fff;
+  border:2px dashed var(--pink);
+  border-radius:10px;
+  padding:12px;
+  margin-top:22px;
+  max-height:130px;
+  overflow:auto;
+  font-size:13px;
+}
+
+/* 🚨 GLITCH */
+.glitch {
+  animation: glitch .2s infinite;
+}
+@keyframes glitch {
+  0%{transform:translate(0)}
+  25%{transform:translate(-2px,2px)}
+  50%{transform:translate(2px,-2px)}
+  75%{transform:translate(-2px,-2px)}
+  100%{transform:translate(0)}
+}
+
+/* ❤️ HEARTS */
+.heart {
+  position:fixed;
+  font-size:22px;
+  animation: float 3s linear forwards;
+  pointer-events:none;
+  z-index:10;
+}
+@keyframes float {
+  to { transform:translateY(-450px); opacity:0; }
+}
+
+/* 🚨 MODAL */
+.popup {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:99;
+}
+.popup .box {
+  background:white;
+  border:5px solid var(--pink);
+  border-radius:18px;
+  padding:28px;
+  text-align:center;
+  animation: pop .35s ease;
+}
+@keyframes pop {
+  from{transform:scale(.5);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="cosmos"></canvas>
+
+<div class="card" id="card">
+  <div class="duck">🦆</div>
+  <h1>Sarah, will you be my Valentine?</h1>
+  <div class="subtitle">⚠️ This system has feelings now.</div>
+
+  <div class="controls">
+    <button id="yes">Yes 💖</button>
+    <button id="no">No</button>
+  </div>
+
+  <div class="log" id="log">
+    ▶ Booting RomanceOS v9.14<br>
+    ▶ Duck consciousness online<br>
+    ▶ Probability of YES: 97%<br>
+  </div>
+</div>
+
+<div class="popup" id="popup">
+  <div class="box" id="popupBox"></div>
+</div>
+
+<script>
+/* 🌌 INFINITE COSMOS */
+const canvas = document.getElementById("cosmos");
+const ctx = canvas.getContext("2d");
+let w,h;
+function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight;}
+addEventListener("resize",resize); resize();
+
+const stars=[];
+for(let i=0;i<400;i++){
+  stars.push({x:Math.random()*w,y:Math.random()*h,s:Math.random()*1.5+0.5,v:Math.random()*0.8+0.2});
+}
+function space(){
+  ctx.fillStyle="rgba(5,0,15,.35)";
+  ctx.fillRect(0,0,w,h);
+  for(const s of stars){
+    ctx.fillStyle="white";
+    ctx.fillRect(s.x,s.y,s.s,s.s);
+    s.y+=s.v;
+    if(s.y>h){s.y=0;s.x=Math.random()*w;}
+  }
+  requestAnimationFrame(space);
+}
+space();
+
+/* 🦆 CHAOS LOGIC */
+const no=document.getElementById("no");
+const yes=document.getElementById("yes");
+const log=document.getElementById("log");
+const card=document.getElementById("card");
+const popup=document.getElementById("popup");
+const popupBox=document.getElementById("popupBox");
+
+let attempts=0;
+
+const duckTalk=[
+  "🦆 Duck: Oh no. That was the wrong one.",
+  "🦆 Duck: Interesting choice. Incorrect.",
+  "🦆 Duck: I am judging you in HD.",
+  "🦆 Duck: This is becoming a pattern.",
+  "🦆 Duck: Please stop embarrassing us.",
+  "🦆 Duck: Reality is destabilizing."
+];
+
+function logLine(t){
+  log.innerHTML+=t+"<br>";
+  log.scrollTop=log.scrollHeight;
+}
+
+function heart(x){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.textContent=["💖","💘","💕","💗"][Math.floor(Math.random()*4)];
+  h.style.left=x+"px";
+  h.style.bottom="0";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),3000);
+}
+
+function dodge(){
+  attempts++;
+  logLine(duckTalk[Math.min(attempts-1,duckTalk.length-1)]);
+  no.style.transform=`translate(${Math.random()*300-150}px,${Math.random()*140-70}px)
+    rotate(${Math.random()*50-25}deg) scale(${Math.max(.4,1-attempts*.12)})`;
+
+  if(attempts>=4) card.classList.add("glitch");
+
+  if(attempts>=6){
+    popup.style.display="flex";
+    popupBox.innerHTML=`
+      <h2>🚨 SYSTEM OVERRIDE 🚨</h2>
+      <p>You have tested my patience.</p>
+      <p><strong>Assuming YES.</strong></p>
+      <button onclick="accept()">Accept destiny 💖</button>
+    `;
+  }
+}
+
+no.addEventListener("mouseenter",dodge);
+no.addEventListener("click",dodge);
+
+function accept(){
+  popup.style.display="none";
+  yesAction();
+}
+
+yes.addEventListener("click",yesAction);
+
+function yesAction(){
+  card.innerHTML=`
+    <h1>💥 WARP COMPLETE 💥</h1>
+    <p>You are officially my Valentine.</p>
+    <p>Duck approves. Universe agrees.</p>
+  `;
+  for(let i=0;i<80;i++)
+    setTimeout(()=>heart(Math.random()*innerWidth),i*30);
+}
+</script>
+
+</body>
+</html>
